@@ -14,7 +14,6 @@ import re
 
 print('[INFO] ------------------')
 print('[INFO] Created By Brayden')
-print('[INFO] Version 2.1.2')
 print('[INFO] -----------------')
 print('[INFO] Starting Bot...')
 import aiohttp
