@@ -12,6 +12,11 @@ import traceback
 import math
 import re
 
+print('[INFO] ------------------')
+print('[INFO] Created By Brayden')
+print('[INFO] Version 2.1.2')
+print('[INFO] -----------------')
+print('[INFO] Starting Bot...')
 import aiohttp
 import discord
 import colorlog
@@ -1110,9 +1115,9 @@ class MusicBot(discord.Client):
     def _gen_embed(self):
         """Provides a basic template for embeds"""
         e = discord.Embed()
-        e.colour = 7506394
-        e.set_footer(text='Just-Some-Bots/MusicBot ({})'.format(BOTVERSION), icon_url='https://i.imgur.com/gFHBoZA.png')
-        e.set_author(name=self.user.name, url='https://github.com/Just-Some-Bots/MusicBot', icon_url=self.user.avatar_url)
+        e.colour = 3532471
+        e.set_footer(text='Brayden Koh ({})'.format(BOTVERSION), icon_url='http://www.simpleimageresizer.com/_uploads/photos/c55aa282/Profile_Picture_560x560.png')
+        e.set_author(name=self.user.name, url='https://www.brqyden.cf', icon_url=self.user.avatar_url)
         return e
 
     async def cmd_resetplaylist(self, player, channel):
@@ -2973,3 +2978,39 @@ class MusicBot(discord.Client):
             if vc.guild == guild:
                 return vc
         return None
+
+    async def cmd_owner(self, player, author, message, permissions):
+        myid = '<@231682074258571265>'
+        return Response(':point_right: The owner of the bot  is %s :point_left: ' % myid)
+	
+    async def cmd_wave(self, author, message):
+        return Response(':hand_splayed: Hi, <@%s>!:metal: :hand_splayed:' % message.author.id)
+
+    async def cmd_hello(self, author, message):
+        return Response(':hand_splayed: Hi, <@%s>!:metal: :hand_splayed:' % message.author.id)
+
+    async def cmd_developer(self, author, message):
+        dev = '<@231682074258571265>'
+        return Response(':point_right: The developer of the bot  is %s :point_left: ' % dev)
+
+    async def cmd_version(self, message):
+        return Response(':point_right: The bot is currently at version 2.1.2 :zap: :point_left: ')
+
+    async def cmd_ver(self, message):
+        return Response(':point_right: The bot is currently at version 2.1.2 :zap: :point_left: ')
+
+    async def cmd_discordver(self, message):
+        return Response('The discord.py version is: <%s>' % discord._version_)
+
+    async def cmd_dm(self, author, channel, server, permissions):
+        await self.send_message(author, 'FUN STUFF')
+        return Response("\N{OPEN MAILBOX WITH RAISED FLAG}", delete_after=20)
+
+    async def cmd_pizza(self, message):
+        return Response(':pizza: Do you like pizza? Cos i do! :pizza:')
+
+    async def cmd_mcdonalds(self, message):
+        return Response(':hamburger: :fries: Do you like McDonalds bro? Cos i do! :fries: :hamburger:')
+
+    async def cmd_ping(self, message):
+        return Response('My Ping is (latency)')
